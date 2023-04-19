@@ -2,6 +2,6 @@ import express from "express";
 
 const app = express();
 
-console.log("hello");
+app.set("view engine", "pug");
 
 app.listen(3000);
