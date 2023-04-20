@@ -5,5 +5,5 @@ socket.addEventListener("open", () => {
 });
 
 socket.addEventListener("message", (message) => {
-  console.log("Just got this: ", message, " form the server");
+  console.log("Just got this: ", message, " form the Server");
 });
