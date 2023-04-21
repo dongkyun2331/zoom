@@ -15,3 +15,5 @@ socket.addEventListener("message", (message) => {
 socket.addEventListener("close", () => {
   console.log("Disconnected from Server ❌");
 });
+
+messageForm.addEventListener("submit", handleSubmit);
