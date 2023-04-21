@@ -32,7 +32,9 @@ wss.on("connection", (socket) => {
     switch (message.type) {
       case "new_message":
         console.log(message.toString("utf-8"));
-        sockets.forEach((aSocket) => aSocket.send(parsed.payload.toString()));
+        sockets.forEach((aSocket) =>
+          aSocket.send(`${socket.nickname}: ${message.payload}`)
+        );
       case "nickname":
         socket["nickname"] = message.payload;
     }
