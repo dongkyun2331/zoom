@@ -31,6 +31,8 @@ wss.on("connection", (socket) => {
     if (parsed.type === "new_message") {
       console.log(message.toString("utf-8"));
       sockets.forEach((aSocket) => aSocket.send(parsed.payload.toString()));
+    } else if (parsed.type === "nickname") {
+      console.log(parsed.payload);
     }
   });
 });
