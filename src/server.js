@@ -28,11 +28,12 @@ wss.on("connection", (socket) => {
   socket.on("close", onSocketClose);
   socket.on("message", (message) => {
     const parsed = JSON.parse(message);
-    if (parsed.type === "new_message") {
-      console.log(message.toString("utf-8"));
-      sockets.forEach((aSocket) => aSocket.send(parsed.payload.toString()));
-    } else if (parsed.type === "nickname") {
-      console.log(parsed.payload);
+    switch (parsed.type) {
+      case "new_message":
+        console.log(message.toString("utf-8"));
+        sockets.forEach((aSocket) => aSocket.send(parsed.payload.toString()));
+      case "nickname":
+        console.log(parsed.payload);
     }
   });
 });
