@@ -10,10 +10,8 @@ app.use("/public", express.static(__dirname + "/public"));
 app.get("/", (req, res) => res.render("home"));
 app.get("/*", (req, res) => res.redirect("/"));
 
-const handleListen = () => console.log(`Listening on http://localhost:3000`);
-
-const server = http.createServer(app);
-const io = SocketIO(server);
+const httpServer = http.createServer(app);
+const wsServer = SocketIO(httpServer);
 
 // const wss = new WebSocket.Server({ server });
 // const sockets = [];
@@ -35,5 +33,5 @@ const io = SocketIO(server);
 //     }
 //   });
 // });
-
-server.listen(3000, handleListen);
+const handleListen = () => console.log(`Listening on http://localhost:3000`);
+httpServer.listen(3000, handleListen);
