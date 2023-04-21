@@ -24,6 +24,7 @@ const sockets = [];
 
 wss.on("connection", (socket) => {
   sockets.push(socket);
+  socket["nickname"] = "Anon";
   console.log("Connected to Browser ✅");
   socket.on("close", onSocketClose);
   socket.on("message", (msg) => {
