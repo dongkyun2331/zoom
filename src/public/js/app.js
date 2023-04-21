@@ -9,7 +9,7 @@ function handleOpen() {
 socket.addEventListener("open", handleOpen);
 
 socket.addEventListener("message", (message) => {
-  console.log("New message: ", message.data);
+  const li = document.createElement("li");
 });
 
 socket.addEventListener("close", () => {
