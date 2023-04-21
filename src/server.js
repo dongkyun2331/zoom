@@ -26,14 +26,14 @@ wss.on("connection", (socket) => {
   sockets.push(socket);
   console.log("Connected to Browser ✅");
   socket.on("close", onSocketClose);
-  socket.on("message", (message) => {
-    const parsed = JSON.parse(message);
-    switch (parsed.type) {
+  socket.on("message", (msg) => {
+    const message = JSON.parse(msg);
+    switch (message.type) {
       case "new_message":
         console.log(message.toString("utf-8"));
         sockets.forEach((aSocket) => aSocket.send(parsed.payload.toString()));
       case "nickname":
-        console.log(parsed.payload);
+        console.log(message.payload);
     }
   });
 });
