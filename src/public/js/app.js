@@ -1,5 +1,6 @@
 const messageList = document.querySelector("ul");
-const messageForm = document.querySelector("message");
+const nickForm = document.querySelector("#nick");
+const messageForm = document.querySelector("#message");
 const socket = new WebSocket(`ws://${window.location.host}`);
 
 function handleOpen() {
