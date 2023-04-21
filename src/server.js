@@ -30,7 +30,7 @@ wss.on("connection", (socket) => {
     const parsed = JSON.parse(message);
     if (parsed.type === "new_message") {
       console.log(message.toString("utf-8"));
-      sockets.forEach((aSocket) => aSocket.send(message.toString()));
+      sockets.forEach((aSocket) => aSocket.send(parsed.payload.toString()));
     }
   });
 });
