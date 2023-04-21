@@ -13,6 +13,7 @@ app.get("/*", (req, res) => res.redirect("/"));
 const handleListen = () => console.log(`Listening on http://localhost:3000`);
 
 const server = http.createServer(app);
+const io = SocketIO(server);
 
 // const wss = new WebSocket.Server({ server });
 // const sockets = [];
