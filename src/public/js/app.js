@@ -18,6 +18,7 @@ socket.addEventListener("close", () => {
 
 function handleSubmit(event) {
   event.preventDefault();
+  const input = messageForm.querySelector("input");
 }
 
 messageForm.addEventListener("submit", handleSubmit);
