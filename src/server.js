@@ -33,7 +33,7 @@ wss.on("connection", (socket) => {
         console.log(message.toString("utf-8"));
         sockets.forEach((aSocket) => aSocket.send(parsed.payload.toString()));
       case "nickname":
-        console.log(message.payload);
+        socket["nickname"] = message.payload;
     }
   });
 });
