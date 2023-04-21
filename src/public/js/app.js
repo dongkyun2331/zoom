@@ -10,6 +10,7 @@ socket.addEventListener("open", handleOpen);
 
 socket.addEventListener("message", (message) => {
   const li = document.createElement("li");
+  li.innerText = message.data;
 });
 
 socket.addEventListener("close", () => {
