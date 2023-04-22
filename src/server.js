@@ -14,7 +14,7 @@ const httpServer = http.createServer(app);
 const wsServer = SocketIO(httpServer);
 
 wsServer.on("connection", (socket) => {
-  socket.on("enter_room", (a, b, c, d, e, f) => {
+  socket.on("enter_room", (roomName) => {
     console.log(a, b, c, d, e, f);
   });
 });
