@@ -6,9 +6,15 @@ const form = welcome.querySelector("form");
 function handleRoomSubmit(event) {
   event.preventDefault();
   const input = form.querySelector("input");
-  socket.emit("enter_room", { payload: input.value }, () => {
-    console.log("server is done!");
-  });
+  socket.emit(
+    "enter_room",
+    { payload: input.value },
+    5,
+    "hello",
+    43443,
+    true,
+    false
+  );
   input.value = "";
 }
 
