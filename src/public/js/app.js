@@ -10,7 +10,7 @@ function backendDone() {
 function handleRoomSubmit(event) {
   event.preventDefault();
   const input = form.querySelector("input");
-  socket.emit("enter_room", input.value);
+  socket.emit("enter_room", input.value, backendDone);
   input.value = "";
 }
 
