@@ -18,7 +18,7 @@ wsServer.on("connection", (socket) => {
     console.log(`Socket Event: ${event}`);
   });
   socket.on("enter_room", (roomName, done) => {
-    socket.join("roomName");
+    socket.join(roomName);
     done();
     socket.to(roomName).emit("welcome");
   });
@@ -31,25 +31,5 @@ wsServer.on("connection", (socket) => {
   });
 });
 
-// const wss = new WebSocket.Server({ server });
-// const sockets = [];
-// wss.on("connection", (socket) => {
-//   sockets.push(socket);
-//   socket["nickname"] = "Anon";
-//   console.log("Connected to Browser ✅");
-//   socket.on("close", onSocketClose);
-//   socket.on("message", (msg) => {
-//     const message = JSON.parse(msg);
-//     switch (message.type) {
-//       case "new_message":
-//         console.log(message.toString("utf-8"));
-//         sockets.forEach((aSocket) =>
-//           aSocket.send(`${socket.nickname}: ${message.payload}`)
-//         );
-//       case "nickname":
-//         socket["nickname"] = message.payload;
-//     }
-//   });
-// });
 const handleListen = () => console.log(`Listening on http://localhost:3000`);
 httpServer.listen(3000, handleListen);
