@@ -7,7 +7,8 @@ const room = document.getElementById("room");
 room.hidden = true;
 
 function showRoom() {
-  console.log(`The backend says:`, msg);
+  welcome.hidden = true;
+  room.hidden = false;
 }
 
 function handleRoomSubmit(event) {
