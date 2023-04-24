@@ -17,7 +17,7 @@ function addMessage(message) {
 
 function handleMessageSubmit(event) {
   event.preventDefault();
-  const input = room.querySelector("$msg input");
+  const input = room.querySelector("#msg input");
   const value = input.value;
   socket.emit("new_message", input.value, roomName, () => {
     addMessage(`You: ${value}`);
