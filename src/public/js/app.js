@@ -2,6 +2,9 @@ const socket = io();
 
 const welcome = document.getElementById("welcome");
 const form = welcome.querySelector("form");
+const room = document.getElementById("room");
+
+room.hidden = true;
 
 function backendDone(msg) {
   console.log(`The backend says:`, msg);
