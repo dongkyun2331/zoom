@@ -12,6 +12,7 @@ function showRoom() {
   welcome.hidden = true;
   room.hidden = false;
   const h3 = room.querySelector("h3");
+  h3.innerText = `Room ${roomName}`;
 }
 
 function handleRoomSubmit(event) {
