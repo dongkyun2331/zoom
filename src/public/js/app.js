@@ -64,8 +64,8 @@ socket.on("new_message", addMessage);
 
 socket.on("room_change", (rooms) => {
   const roomList = welcome.querySelector("ul");
+  roomList.innerHTML = "";
   if (rooms.length === 0) {
-    roomList.innerHTML = "";
     return;
   }
   rooms.forEach((room) => {
