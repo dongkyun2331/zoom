@@ -10,6 +10,7 @@ async function getMedia() {
       audio: true,
       video: true,
     });
+    console.log(myStream);
   } catch (e) {
     console.log(e);
   }
