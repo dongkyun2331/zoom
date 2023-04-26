@@ -35,7 +35,9 @@ function handleMuteClick() {
   }
 }
 function handleCameraClick() {
-  console.log(myStream.getVideoTracks());
+  myStream
+    .getVideoTracks()
+    .forEach((track) => (track.enabled = !track.enabled));
   if (cameraOff) {
     cameraBtn.innerText = "Turn Camera Off";
     cameraOff = false;
