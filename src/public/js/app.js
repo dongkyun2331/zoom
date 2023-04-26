@@ -38,7 +38,9 @@ async function getMedia(deviceId) {
       deviceId ? cameraConstraints : initialConstrains
     );
     myFace.srcObject = myStream;
-    await getCameras();
+    if (!deviceId) {
+      await getCameras();
+    }
   } catch (e) {
     console.log(e);
   }
