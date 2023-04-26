@@ -29,7 +29,7 @@ function publicRooms() {
 }
 
 function countRoom(roomName) {
-  return wsServer.socket.adapter.rooms.get(roomName)?.size;
+  return wsServer.sockets.adapter.rooms.get(roomName)?.size;
 }
 
 wsServer.on("connection", (socket) => {
