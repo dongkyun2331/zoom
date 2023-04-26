@@ -11,6 +11,7 @@ let cameraOff = false;
 async function getCameras() {
   try {
     const devices = await navigator.mediaDevices.enumerateDevices();
+    console.log(devices);
   } catch (e) {
     console.log(e);
   }
