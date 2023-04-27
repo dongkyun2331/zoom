@@ -90,4 +90,12 @@ muteBtn.addEventListener("click", handleMuteClick);
 cameraBtn.addEventListener("click", handleCameraClick);
 camerasSelect.addEventListener("input", handleCameraChange);
 
-welcomeForm = welcome.querySelector("form");
+const welcomeForm = welcome.querySelector("form");
+
+function handleWelcomeSubmit(event) {
+  event.preventDefault();
+  const input = welcomeForm.querySelector("input");
+  console.log(input.value);
+}
+
+welcomeForm.addEventListener("submit", handleWelcomeSubmit);
