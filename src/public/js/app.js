@@ -89,3 +89,5 @@ async function handleCameraChange() {
 muteBtn.addEventListener("click", handleMuteClick);
 cameraBtn.addEventListener("click", handleCameraClick);
 camerasSelect.addEventListener("input", handleCameraChange);
+
+welcomeForm = welcome.querySelector("form");
