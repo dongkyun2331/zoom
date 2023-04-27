@@ -4,8 +4,6 @@ const myFace = document.getElementById("myFace");
 const muteBtn = document.getElementById("mute");
 const cameraBtn = document.getElementById("camera");
 const camerasSelect = document.getElementById("cameras");
-
-const welcome = document.getElementById("welcome");
 const call = document.getElementById("call");
 
 call.hidden = true;
@@ -90,6 +88,7 @@ muteBtn.addEventListener("click", handleMuteClick);
 cameraBtn.addEventListener("click", handleCameraClick);
 camerasSelect.addEventListener("input", handleCameraChange);
 
+const welcome = document.getElementById("welcome");
 const welcomeForm = welcome.querySelector("form");
 
 function startMedia() {
