@@ -95,7 +95,8 @@ const welcomeForm = welcome.querySelector("form");
 function handleWelcomeSubmit(event) {
   event.preventDefault();
   const input = welcomeForm.querySelector("input");
-  console.log(input.value);
+  socket.emit("join_room", input.value);
+  input.value = "";
 }
 
 welcomeForm.addEventListener("submit", handleWelcomeSubmit);
