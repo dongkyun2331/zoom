@@ -1,6 +1,5 @@
 import http from "http";
 import { Server } from "socket.io";
-import { instrument } from "@socket.io/admin-ui";
 import express from "express";
 
 const app = express();
@@ -15,8 +14,9 @@ const httpServer = http.createServer(app);
 const wsServer = new Server(httpServer);
 
 wsServer.on("connection", (socket) => {
-  socket.on("join_room", (roomName) => {
+  socket.on("join_room", (roomName, done) => {
     socket.join(roomName);
+    done();
   });
 });
 
