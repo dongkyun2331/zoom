@@ -8,6 +8,8 @@ const camerasSelect = document.getElementById("cameras");
 const welcome = document.getElementById("welcome");
 const call = document.getElementById("call");
 
+call.hidden = true;
+
 let myStream;
 let muted = false;
 let cameraOff = false;
