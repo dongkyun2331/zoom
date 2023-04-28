@@ -141,6 +141,7 @@ function makeConnection() {
 }
 
 function handleIce(data) {
+  socket.emit("ice", data.candidate, roomName);
   console.log("got ice candidate");
   console.log(data);
 }
