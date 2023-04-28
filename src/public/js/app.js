@@ -152,6 +152,7 @@ function handleIce(data) {
 }
 
 function handleAddStream(data) {
-  console.log("got an event from my peer");
-  console.log(data);
+  console.log("got an stream from my peer");
+  console.log("Peer's Stream", data.stream);
+  console.log("My stream", myStream);
 }
