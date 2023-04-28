@@ -4,8 +4,7 @@
   "description": "Zoom Clone using WebRTC and Websockets",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon",
-    "build": "webpack --config webpack.config.js"
+    "dev": "nodemon"
   },
   "devDependencies": {
     "@babel/cli": "7.21.0",
@@ -14,13 +13,11 @@
     "@babel/preset-env": "7.21.4",
     "nodemon": "2.0.22",
     "pug": "^2.0.4",
-    "pug-loader": "^2.4.0",
-    "webpack-cli": "^5.0.2"
+    "pug-loader": "^2.4.0"
   },
   "dependencies": {
     "@socket.io/admin-ui": "^0.5.1",
     "express": "^4.18.2",
-    "firebase": "^9.21.0",
     "localtunnel": "^2.0.2",
     "socket.io": "^4.6.1",
     "ws": "^8.13.0"
