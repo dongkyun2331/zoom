@@ -96,8 +96,6 @@ muteBtn.addEventListener("click", handleMuteClick);
 cameraBtn.addEventListener("click", handleCameraClick);
 camerasSelect.addEventListener("input", handleCameraChange);
 
-// Welcome Form (join a room)
-
 const welcome = document.getElementById("welcome");
 const welcomeForm = welcome.querySelector("form");
 
@@ -112,14 +110,12 @@ async function handleWelcomeSubmit(event) {
   event.preventDefault();
   const input = welcomeForm.querySelector("input");
   await initCall();
-  socket.emit("join_room", input.value);
+  socket.emit("join_room", input.value, initCall);
   roomName = input.value;
   input.value = "";
 }
 
 welcomeForm.addEventListener("submit", handleWelcomeSubmit);
-
-// Socket Code
 
 socket.on("welcome", async () => {
   myDataChannel = myPeerConnection.createDataChannel("chat");
@@ -156,18 +152,16 @@ socket.on("ice", (ice) => {
   myPeerConnection.addIceCandidate(ice);
 });
 
-// RTC Code
-
 function makeConnection() {
   myPeerConnection = new RTCPeerConnection({
     iceServers: [
       {
         urls: [
-          "stun:stun.l.google.com:19302",
-          "stun:stun1.l.google.com:19302",
-          "stun:stun2.l.google.com:19302",
-          "stun:stun3.l.google.com:19302",
-          "stun:stun4.l.google.com:19302",
+          "stun:stun.1.google.com:19302",
+          "stun:stun1.1.google.com:19302",
+          "stun:stun2.1.google.com:19302",
+          "stun:stun3.1.google.com:19302",
+          "stun:stun4.1.google.com:19302",
         ],
       },
     ],
@@ -180,7 +174,7 @@ function makeConnection() {
 }
 
 function handleIce(data) {
-  console.log("sent candidate");
+  console.log("sent cadidate");
   socket.emit("ice", data.candidate, roomName);
 }
 
