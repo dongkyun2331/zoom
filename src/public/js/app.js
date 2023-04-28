@@ -104,7 +104,7 @@ async function handleWelcomeSubmit(event) {
   event.preventDefault();
   const input = welcomeForm.querySelector("input");
   await initCall();
-  socket.emit("join_room", input.value, startMedia);
+  socket.emit("join_room", input.value, initCall);
   roomName = input.value;
   input.value = "";
 }
