@@ -112,7 +112,8 @@ welcomeForm.addEventListener("submit", handleWelcomeSubmit);
 
 socket.on("welcome", async () => {
   const offer = await myPeerConnection.createOffer();
-  console.log(offer);
+  myPeerConnection.setLocalDescription(offer);
+  socket.emit("offer", offer, roomName);
 });
 
 function makeConnection() {
