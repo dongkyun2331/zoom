@@ -56,8 +56,6 @@ async function getMedia(deviceId) {
   }
 }
 
-getMedia();
-
 function handleMuteClick() {
   myStream
     .getAudioTracks()
