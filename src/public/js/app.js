@@ -128,6 +128,7 @@ socket.on("offer", async (offer) => {
 });
 
 socket.on("answer", (answer) => {
+  console.log("received the answer");
   myPeerConnection.setRemoteDescription(answer);
 });
 
