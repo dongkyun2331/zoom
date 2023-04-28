@@ -118,8 +118,10 @@ socket.on("welcome", async () => {
   socket.emit("offer", offer, roomName);
 });
 
-socket.on("offer", (offer) => {
+socket.on("offer", async (offer) => {
   myPeerConnection.setRemoteDescription(offer);
+  const answer = await myPeerConnection.createAnswer();
+  console.log(answer);
 });
 
 function makeConnection() {
