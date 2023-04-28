@@ -93,16 +93,17 @@ camerasSelect.addEventListener("input", handleCameraChange);
 const welcome = document.getElementById("welcome");
 const welcomeForm = welcome.querySelector("form");
 
-async function startMedia() {
+async function initCall() {
   welcome.hidden = true;
   call.hidden = false;
   await getMedia();
   makeConnection();
 }
 
-function handleWelcomeSubmit(event) {
+async function handleWelcomeSubmit(event) {
   event.preventDefault();
   const input = welcomeForm.querySelector("input");
+  await initCall();
   socket.emit("join_room", input.value, startMedia);
   roomName = input.value;
   input.value = "";
@@ -118,7 +119,7 @@ socket.on("welcome", async () => {
 });
 
 socket.on("offer", (offer) => {
-  console.log(offer);
+  myPeerConnection.setRemoteDescription(offer);
 });
 
 function makeConnection() {
